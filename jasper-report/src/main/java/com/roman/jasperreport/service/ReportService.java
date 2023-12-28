@@ -23,12 +23,16 @@ public class ReportService {
 
         String path = "E:\\Roman\\GitHub\\New folder\\Generated Report";
         List<Products> products = productsRepo.findAll();
+
         // Load file
         File file = ResourceUtils.getFile("classpath:reports/products.jrxml");
+
         // Compile file
         JasperReport jasperReport = JasperCompileManager.compileReport(file.getAbsolutePath());
+
         // Connection jasper with datasource
         JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(products);
+
         // Create parameters
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("createdBy", "Roman Islam");
