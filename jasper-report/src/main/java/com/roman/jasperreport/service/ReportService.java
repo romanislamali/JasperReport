@@ -24,7 +24,7 @@ public class ReportService {
         String path = "E:\\Roman\\GitHub\\New folder\\Generated Report";
         List<Products> products = productsRepo.findAll();
         // Load file
-        File file = ResourceUtils.getFile("classpath:products.jrxml");
+        File file = ResourceUtils.getFile("classpath:reports/products.jrxml");
         // Compile file
         JasperReport jasperReport = JasperCompileManager.compileReport(file.getAbsolutePath());
         // Connection jasper with datasource
